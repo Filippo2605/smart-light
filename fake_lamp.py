@@ -12,7 +12,7 @@ client = mqtt.Client()
 
 # Use TLS for cloud connection
 client.tls_set()  # enable encryption
-client.username_pw_set(username="qjcmdhxa", password=api_key)
+client.username_pw_set(username="qjcmdhxa", password="qjcmdhxa")
 client.connect("kebnekaise.lmq.cloudamqp.com", 8883)
 
 client.subscribe("camera/luce")

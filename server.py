@@ -17,7 +17,7 @@ def accendi():
         hostname="kebnekaise.lmq.cloudamqp.com",
         port=8883,
         tls={'ca_certs': None},  # optional for self-signed certificates
-        auth={'username': "qjcmdhxa", 'password': api_key}
+        auth={'username': "qjcmdhxa", 'password': "qjcmdhxa"}
     )
     return {"stato": "accesa"}
 
@@ -29,6 +29,6 @@ def spegni():
         hostname="kebnekaise.lmq.cloudamqp.com",
         port=8883,
         tls={'ca_certs': None},
-        auth={'username': "qjcmdhxa", 'password': api_key}
+        auth={'username': "qjcmdhxa", 'password': "qjcmdhxa"}
     )
     return {"stato": "spenta"}
