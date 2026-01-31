@@ -5,6 +5,7 @@ import os
 
 load_dotenv()
 api_key = os.getenv("CLOUD_AMQP_PASSWORD")
+username = os.getenv("CLOUD_AMQP_USERNAME")
 
 app = FastAPI()
 TOPIC = "casa/lampada"
@@ -17,7 +18,7 @@ def accendi():
         hostname="kebnekaise.lmq.cloudamqp.com",
         port=8883,
         tls={'ca_certs': None},  # optional for self-signed certificates
-        auth={'username': "qjcmdhxa", 'password': "qjcmdhxa"}
+        auth={'username': username, 'password': api_key}
     )
     return {"stato": "accesa"}
 
@@ -29,6 +30,6 @@ def spegni():
         hostname="kebnekaise.lmq.cloudamqp.com",
         port=8883,
         tls={'ca_certs': None},
-        auth={'username': "qjcmdhxa", 'password': "qjcmdhxa"}
+        auth={'username': username, 'password': api_key}
     )
     return {"stato": "spenta"}
